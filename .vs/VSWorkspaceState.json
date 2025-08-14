@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\celestialSimulator"
   ],
-  "SelectedNode": "\\main.c",
+  "SelectedNode": "\\celestialSimulator",
   "PreviewInSolutionExplorer": false
 }

@@ -1,10 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\USER\\Documents\\celestial-simulator\\",
+  "WorkspaceRootPath": "C:\\Users\\hyoeu\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\backup\\celestial-simulator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USER\\Documents\\celestial-simulator\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hyoeu\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\backup\\celestial-simulator\\celestialSimulator\\1.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:celestialSimulator\\1.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +14,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "main.c",
-              "DocumentMoniker": "C:\\Users\\USER\\Documents\\celestial-simulator\\main.c",
-              "RelativeDocumentMoniker": "main.c",
-              "ToolTip": "C:\\Users\\USER\\Documents\\celestial-simulator\\main.c",
-              "RelativeToolTip": "main.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "1.c",
+              "DocumentMoniker": "C:\\Users\\hyoeu\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\backup\\celestial-simulator\\celestialSimulator\\1.c",
+              "RelativeDocumentMoniker": "celestialSimulator\\1.c",
+              "ToolTip": "C:\\Users\\hyoeu\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\backup\\celestial-simulator\\celestialSimulator\\1.c",
+              "RelativeToolTip": "celestialSimulator\\1.c",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAAB0AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-08-07T13:01:33.666Z",
+              "WhenOpened": "2025-08-09T02:05:08.087Z",
               "EditorCaption": ""
             }
           ]
