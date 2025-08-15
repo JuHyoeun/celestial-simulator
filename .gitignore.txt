@@ -1,0 +1,25 @@
+# ===== Visual Studio =====
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db*
+*.opendb
+
+# ===== Build results =====
+Debug/
+Release/
+x64/
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.tlog
+*.ipch
+*.idb
+
+# ===== Misc =====
+*.log
+*.tmp
+*.bak
