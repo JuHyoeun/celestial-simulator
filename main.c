@@ -1,7 +1,7 @@
-#define _CRT_SECURE_NO_WARNINGS
 #define _USE_MATH_DEFINES
-#include <stdio.h>
+#include <GL/freeglut.h>
 #include <math.h>
+#include <stdio.h>
 
 // 하나의 행성에 담을 정보가 많기 때문에 구조체 사용
 struct planet {
@@ -13,13 +13,19 @@ struct planet {
 	double y;
 };
 
-// 행성들의 위치 출력함수
-void printPlanet(struct planet planets[], int count) {
-	for (int i = 0; i < count; i++) {
-		printf("%s : (%.3f, %.3f)\n", planets[i].name, planets[i].x, planets[i].y);
-	}
-	printf("\n");
-}
+// 코드 반복 줄이기 위해 구조체 배열 사용
+struct planet planets[8] = {
+	{ "mercury", 0.4, 87.97, 0.4, 0 },
+	{ "venus",   0.7, 224.7, 0.7, 0 },
+	{ "earth",   1.0, 365.26, 1.0, 0 },
+	{ "mars",    1.5, 686.96, 1.5, 0 },
+	{ "jupiter", 5.2, 4333.29, 5.2, 0 },
+	{ "saturn",  9.5, 10756.2, 9.5, 0 },
+	{ "uranus", 19.2, 30707.49, 19.2, 0 },
+	{ "neptune",30.1, 60223.35, 30.1, 0 }
+};
+
+int day = 0; // 현재 시뮬레이션 일 수
 
 void planet_position_cal(struct planet* a, int day) {
 	double angle = 2 * M_PI * day / a->orbit_cycle;// 현재 궤도상 각도
@@ -28,37 +34,49 @@ void planet_position_cal(struct planet* a, int day) {
 	a->y = a->radius * sin(angle);
 }
 
-int main(void) {
-	// sun을 (0, 0)으로, 2차원 사분면에서 행성의 위치를 표현
-	// 단위는 1AU
-	// 초기 위치는 x축 위
-	int days;
-	int planet_count = 8;
-
-	// 코드 반복 줄이기 위해 구조체 배열 사용
-	struct planet planets[8] = {
-		{ "mercury", 0.4, 87.97, 0.4, 0 },
-		{ "venus",   0.7, 224.7, 0.7, 0 },
-		{ "earth",   1.0, 365.26, 1.0, 0 },
-		{ "mars",    1.5, 686.96, 1.5, 0 },
-		{ "jupiter", 5.2, 4333.29, 5.2, 0 },
-		{ "saturn",  9.5, 10756.2, 9.5, 0 },
-		{ "uranus", 19.2, 30707.49, 19.2, 0 },
-		{ "neptune",30.1, 60223.35, 30.1, 0 }
-	};
-
-	printf("n일 동안의 행성의 움직임을 구현합니다. 단위: AU\n");
-	printf("n을 입력: ");
-	scanf("%d", &days);
-
-	// 하루마다 행성의 위치를 출력
-	for (int i = 0; i <= days; i++) {
-		for (int j = 0; j < planet_count; j++) {
-			planet_position_cal(&planets[j], i);
-		}
-		printf("%d일차 행성의 위치\n", i);
-		printPlanet(planets, planet_count);
+// 화면에 점으로 행성 그리기
+void display() {
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	
+	glBegin(GL_POINTS);
+	for (int i = 0; i < 8; i++) {
+		planet_position_cal(&planets[i], day);
+		glVertex2d(planets[i].x, planets[i].y); // AU좌표 그대로 사용
 	}
+	glEnd();
 
+	glutSwapBuffers();
+}
+
+// 시뮬레이션 업데이트
+void update(int value) {
+	day++; // 하루 증가
+	glutPostRedisplay(); // 화면 다시 그리기
+	glutTimerFunc(50, update, 0); // 0.05초마다 update 호출
+}
+
+void initOpenGL() {
+	glEnable(GL_DEPTH_TEST);       // 깊이 테스트 활성화
+	glClearColor(0, 0, 0, 1);  // 배경 검은색
+	glPointSize(8);
+
+	// 좌표계를 AU 단위에 맞춤
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	glOrtho(-35, 35, -35, 35, -1, 1); // 화면 안에 모든 행성 포함
+	glMatrixMode(GL_MODELVIEW);
+}
+
+int main(int argc, char** argv) {
+	glutInit(&argc, argv);
+	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
+	glutInitWindowSize(800, 600);
+	glutCreateWindow("Solar System Simulation");
+
+	initOpenGL();
+	glutDisplayFunc(display);  // 디스플레이 콜백 등록
+	glutTimerFunc(50, update, 0);
+
+	glutMainLoop();            // 이벤트 루프 시작
 	return 0;
 }

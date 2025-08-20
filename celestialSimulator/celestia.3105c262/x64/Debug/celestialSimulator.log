@@ -1,7 +1,0 @@
-﻿  1.c
-C:\Users\USER\Documents\celestial-simulator\celestialSimulator\1.c(19,39): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\USER\Documents\celestial-simulator\celestialSimulator\1.c(20,35): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\USER\Documents\celestial-simulator\celestialSimulator\1.c(23,39): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\USER\Documents\celestial-simulator\celestialSimulator\1.c(25,37): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\USER\Documents\celestial-simulator\celestialSimulator\1.c(26,39): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
-  celestialSimulator.vcxproj -> C:\Users\USER\Documents\celestial-simulator\celestialSimulator\x64\Debug\celestialSimulator.exe
